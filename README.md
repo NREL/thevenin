@@ -31,10 +31,10 @@ This package is a wrapper for the well-known Thevenin equivalent circuit model. 
 
 This system is governed by the evolution of the state of charge (SOC, -), RC overpotentials ($V_j$, V), cell voltage ($V_{\rm cell}$, V), and temperature ($T_{\rm cell}$, K). SOC and $V_j$ evolve in time as
 
-$$\frac{d\rm SOC}{dt} = \frac{-I}{3600 Q_{\rm max}},$$
+$$\frac{d\rm SOC}{dt} = \frac{-I \eta_{\rm ce}}{3600 Q_{\rm max}},$$
 $$\frac{dV_j}{dt} = -\frac{V_j}{R_jC_j} + \frac{I}{C_j},$$
 
-where $I$ is the load current (A), $Q_{\rm max}$ is the maximum nominal cell capacity (Ah), and $R_j$ and $C_j$ are the resistance (Ohm) and capacitance (F) of each RC pair $j$. Note that the sign convention for $I$ is chosen such that positive $I$ discharges the battery (reduces SOC) and negative $I$ charges the battery (increases SOC). This convention is consistent with common physics-based models, e.g., the single particle model or pseudo-2D model. While not explicitly included in the equations above, $R_j$ and $C_j$ are functions of SOC and $T_{\rm cell}$. The temperature increases while the cell is active according to
+where $I$ is the load current (A), $Q_{\rm max}$ is the maximum nominal cell capacity (Ah), and $R_j$ and $C_j$ are the resistance (Ohm) and capacitance (F) of each RC pair $j$. $\eta_{\rm ce}$ is the cell's Coulombic efficiency, which is always equal to unity during discharge. Note that the sign convention for $I$ is chosen such that positive $I$ discharges the battery (reduces SOC) and negative $I$ charges the battery (increases SOC). This convention is consistent with common physics-based models, e.g., the single particle model or pseudo-2D model. While not explicitly included in the equations above, $R_j$ and $C_j$ are functions of SOC and $T_{\rm cell}$. The temperature increases while the cell is active according to
 
 $$mC_p\frac{dT_{\rm cell}}{dt} = Q_{\rm gen} + Q_{\rm conv},$$
 
@@ -87,19 +87,19 @@ soln.plot('time_h', 'voltage_V')
 * If you are new to Python, check out [Spyder IDE](https://www.spyder-ide.org/). Spyder is a powerful interactive development environment (IDE) that can make programming in Python more approachable to new users.
 
 ## Citing this Work
-This work was authored by researchers at the National Renewable Energy Laboratory (NREL). The project is tracked in NREL's software records under SWR-24-132 and has a DOI available for citing the work. If you use use this package in your work, please include the following citation:
+This work was authored by researchers at the National Renewable Energy Laboratory (NREL). If you use use this package in your work, please include the following citation:
 
-> Placeholder... waiting for DOI.
+> Randall, Corey R. "thevenin: Equivalent circuit models in Python [SWR-24-132]." Computer software. url: https://github.com/NREL/thevenin. doi: https://doi.org/10.11578/dc.20241125.2.
 
 For convenience, we also provide the following for your BibTex:
 
 ```
-@misc{Randall2024,
-  title = {{thevenin: Equivalent circuit models in Python}},
+@misc{Randall-2024,
+  title = {{thevenin: Equivalent circuit models in Python [SWR-24-132]}},
   author = {Randall, Corey R.},
-  year = {2024},
-  doi = {placeholder... waiting for DOI},
+  doi = {10.11578/dc.20241125.2},
   url = {https://github.com/NREL/thevenin},
+  year = {2024},
 }
 ```
 

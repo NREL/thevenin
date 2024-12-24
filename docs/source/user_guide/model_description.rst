@@ -12,11 +12,11 @@ The Thevenin circuit is governed by the evolution of the state of charge (soc, -
 .. math::
 
     \begin{align}
-      &\frac{d\rm soc}{dt} = \frac{-I}{3600 Q_{\rm max}}, \\
+      &\frac{d\rm soc}{dt} = \frac{-I \eta_{\rm ce}}{3600 Q_{\rm max}}, \\
       &\frac{dV_j}{dt} = -\frac{V_j}{R_jC_j} + \frac{I}{C_j},
     \end{align}
 
-where :math:`I` is the load current (A), :math:`Q_{\rm max}` is the maximum nominal cell capacity (Ah), and :math:`R_j` and :math:`C_j` are the resistance (Ohm) and capacitance (F) of each RC pair :math:`j`. Note that the sign convention for :math:`I` is chosen such that positive :math:`I` discharges the battery (reduces soc) and negative :math:`I` charges the battery (increases soc). This convention is consistent with common physics-based models, e.g., the single particle model or pseudo-2D model. While not explicitly included in the equations above, :math:`R_j` and :math:`C_j` are functions of soc and :math:`T_{\rm cell}`. The temperature increases while the cell is active according to
+where :math:`I` is the load current (A), :math:`Q_{\rm max}` is the maximum nominal cell capacity (Ah), and :math:`R_j` and :math:`C_j` are the resistance (Ohm) and capacitance (F) of each RC pair :math:`j`. :math:`\eta_{\rm ce}` is the cell's Coulombic efficiency, which is always equal to unity during discharge. Note that the sign convention for :math:`I` is chosen such that positive :math:`I` discharges the battery (reduces soc) and negative :math:`I` charges the battery (increases soc). This convention is consistent with common physics-based models, e.g., the single particle model or pseudo-2D model. While not explicitly included in the equations above, :math:`R_j` and :math:`C_j` are functions of soc and :math:`T_{\rm cell}`. The temperature increases while the cell is active according to
 
 .. math:: 
     

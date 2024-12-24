@@ -33,7 +33,7 @@ def test_step_and_cycle_solutions(soln):
         step_soln.plot('fake', 'plot')
 
     # plots w/ and w/o units
-    with plt.ion():
+    with plt.ioff():
         step_soln.plot('soc', 'soc')
         step_soln.plot('time_h', 'voltage_V')
         plt.close('all')
@@ -48,7 +48,7 @@ def test_step_and_cycle_solutions(soln):
         cycle_soln.plot('fake', 'plot')
 
     # plots w/ and w/o units
-    with plt.ion():
+    with plt.ioff():
         cycle_soln.plot('soc', 'soc')
         cycle_soln.plot('time_h', 'voltage_V')
         plt.close('all')

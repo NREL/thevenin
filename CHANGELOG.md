@@ -3,11 +3,22 @@
 ## [Unreleased](https://github.com/NREL/thevenin)
 
 ### New Features
+
+### Optimizations
+
+### Bug Fixes
+
+### Breaking Changes
+
+## [v0.1.2](https://github.com/NREL/thevenin/tree/v0.1.2)
+
+### New Features
 - Added Coulombic efficiency (`ce`) as a parameter option ([#4](https://github.com/NREL/thevenin/pull/4))
 
 ### Optimizations
 
 ### Bug Fixes
+- `Solution.plot` now blocks at the end of a program ([#5](https://github.com/NREL/thevenin/pull/5)). Figures no longer automatically close when programs are run from scripts. Blocking only occurs at the end of a program so that opening figures do not stop other lines of code from running.
 
 ### Breaking Changes
 - New Coulombic efficiency option means users will need to update old `params` inputs to also include `ce`

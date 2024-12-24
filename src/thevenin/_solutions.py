@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import Iterable, TYPE_CHECKING
 
+import atexit
 import textwrap
 from copy import deepcopy
 
@@ -108,7 +109,7 @@ class BaseSolution(IDAResult):
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
 
-        plt.show(block=False)
+        atexit.register(plt.show)
 
     def _to_dict(self) -> None:
         """

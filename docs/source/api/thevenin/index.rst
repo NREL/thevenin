@@ -23,8 +23,8 @@ thevenin
 
 
 
-Subpackages
------------
+Submodules
+----------
 
 .. toctree::
    :maxdepth: 1
@@ -96,6 +96,7 @@ Package Contents
 
    .. py:property:: solvetime
       :type: str
+
 
       Print a statement specifying how long IDASolver spent integrating.
 
@@ -198,6 +199,7 @@ Package Contents
    .. py:property:: num_steps
       :type: int
 
+
       Return number of steps.
 
       :returns: **num_steps** (*int*) -- Number of steps.
@@ -205,6 +207,7 @@ Package Contents
 
    .. py:property:: steps
       :type: list[dict]
+
 
       Return steps list.
 
@@ -581,6 +584,7 @@ Package Contents
                   num_RC_pairs  number of RC pairs         *int*, -
                   soc0          initial state of charge    *float*, -
                   capacity      maximum battery capacity   *float*, Ah
+                  ce            coulombic efficiency       *float*, -
                   mass          total battery mass         *float*, kg
                   isothermal    flag for isothermal model  *bool*, -
                   Cp            specific heat capacity     *float*, J/kg/K
@@ -807,6 +811,7 @@ Package Contents
 
    .. py:property:: solvetime
       :type: str
+
 
       Print a statement specifying how long IDASolver spent integrating.
 

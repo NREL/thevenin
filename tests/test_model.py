@@ -370,6 +370,7 @@ def test_isothermal_flag(model_2RC, constant_steps):
     assert np.allclose(soln.vars['temperature_K'], model_2RC.T_inf)
 
 
+@pytest.mark.filterwarnings("ignore:.*default parameter file.*:UserWarning")
 def test_coulombic_efficiency():
 
     model_100 = thev.Model()
