@@ -16,6 +16,7 @@
 - Added Coulombic efficiency (`ce`) as a parameter option ([#4](https://github.com/NREL/thevenin/pull/4))
 
 ### Optimizations
+- Bounded exponential input to avoid overflow warnings inside the sigmoid function of `loadfns.Ramp2Constant` ([#6](https://github.com/NREL/thevenin/pull/6))
 
 ### Bug Fixes
 - `*Solution.plot()` now has a `show_plot` option to register `plt.show()` and block at the end of a program ([#5](https://github.com/NREL/thevenin/pull/5)). This keeps figures from auto-closing at the end of scripts run in non-interactive environments. Interactive environments (IPython, Jupyter Notebook) are not affected. When set to `False`, users running in non-interactive environments must manually call `plt.show()`. The default is `True`.
