@@ -1,6 +1,6 @@
 # thevenin Changelog
 
-## [Unreleased](https://github.com/NREL/thevenin)
+## [v0.2.0](https://github.com/NREL/thevenin/tree/v0.2.0)
 
 ### New Features
 - Allow the `CycleSolution` to append more solutions after it has been initialized ([#9](https://github.com/NREL/thevenin/pull/9))
@@ -19,25 +19,6 @@
 
 ### Breaking Changes
 - New hysteresis option means users will need to update old `params` inputs to also include `gamma` and `M_hyst` ([#7](https://github.com/NREL/thevenin/pull/7))
-
-## [v0.1.2](https://github.com/NREL/thevenin/tree/v0.1.2)
-
-### New Features
-- Added Coulombic efficiency (`ce`) as a parameter option ([#4](https://github.com/NREL/thevenin/pull/4))
-
-### Optimizations
-- Bounded exponential input to avoid overflow warnings inside the sigmoid function of `loadfns.Ramp2Constant` ([#6](https://github.com/NREL/thevenin/pull/6))
-
-### Bug Fixes
-- `*Solution.plot()` now has a `show_plot` option to register `plt.show` and block at the end of a program ([#5](https://github.com/NREL/thevenin/pull/5))
-
-### Breaking Changes
-- New Coulombic efficiency option means users will need to update old `params` inputs to also include `ce` ([#4](https://github.com/NREL/thevenin/pull/4))
-
-## [v0.1.1](https://github.com/NREL/thevenin/tree/v0.1.1)
-
-### Bug Fixes
-- Corrected some docstrings
 
 ## [v0.1.0](https://github.com/NREL/thevenin/tree/v0.1.0)
 This is the first official release of `thevenin`. Main features/capabilities are listed below.
