@@ -13,7 +13,7 @@
 ## [v0.2.1](https://github.com/NREL/thevenin/tree/v0.2.1)
 
 ### Bug Fixes
-- Use `for` loops in `Solution` post-processing if arrays are incompatible ()
+- Use `for` loops in `Solution` post-processing if arrays are incompatible ([#17](https://github.com/NREL/thevenin/pull/17))
 
 ## [v0.2.0](https://github.com/NREL/thevenin/tree/v0.2.0)
 
