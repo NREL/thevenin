@@ -481,3 +481,41 @@ def test_hysteresis():
         -1.*sim_wh.capacity,
         rtol=1e-3,
     )
+
+
+def test_np_incompatible_funcs():
+
+    def ocv(soc):
+        if isinstance(soc, np.ndarray):
+            raise TypeError("ocv cannot accept numpy arrays.")
+        return 3.8
+
+    def R0(soc, T_cell):
+        if isinstance(soc, np.ndarray):
+            raise TypeError("R0 cannot accept numpy arrays.")
+        elif isinstance(T_cell, np.ndarray):
+            raise TypeError("R0 cannot accept numpy arrays.")
+        return 3.8
+
+    expr = thev.Experiment()
+    expr.add_step('current_A', 0., (100., 1.))
+
+    # with ocv that cannot handle numpy arrays
+    params = dict_params(0)
+    params['ocv'] = ocv
+
+    model = thev.Model(params)
+    soln = model.run(expr)
+
+    assert soln.success
+    npt.assert_allclose(soln.vars['voltage_V'], 3.8)
+
+    # with R0 that cannot handle numpy arrays
+    params = dict_params(0)
+    params['R0'] = R0
+
+    model = thev.Model(params)
+    soln = model.run(expr)
+
+    assert soln.success
+    npt.assert_allclose(soln.vars['eta0_V'], 0.)
