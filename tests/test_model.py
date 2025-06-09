@@ -1,8 +1,11 @@
 import warnings
 
 import pytest
-import numpy as np
 import thevenin as thev
+
+import numpy as np
+import numpy.testing as npt
+
 from scipy.integrate import cumulative_trapezoid
 
 
@@ -414,6 +417,44 @@ def test_coulombic_efficiency():
                                    initial=0.)
 
     assert round(abs(cap_dis).max() / abs(cap_chg).max(), 1) == 0.8
+
+
+def test_np_incompatible_funcs(dict_params):
+
+    def ocv(soc):
+        if isinstance(soc, np.ndarray):
+            raise TypeError("ocv cannot accept numpy arrays.")
+        return 3.8
+
+    def R0(soc, T_cell):
+        if isinstance(soc, np.ndarray):
+            raise TypeError("R0 cannot accept numpy arrays.")
+        elif isinstance(T_cell, np.ndarray):
+            raise TypeError("R0 cannot accept numpy arrays.")
+        return 3.8
+
+    expr = thev.Experiment()
+    expr.add_step('current_A', 0., (100., 1.))
+
+    # with ocv that cannot handle numpy arrays
+    params = dict_params.copy()
+    params['ocv'] = ocv
+
+    model = thev.Model(params)
+    soln = model.run(expr)
+
+    assert soln.success
+    npt.assert_allclose(soln.vars['voltage_V'], 3.8)
+
+    # with R0 that cannot handle numpy arrays
+    params = dict_params.copy()
+    params['R0'] = R0
+
+    model = thev.Model(params)
+    soln = model.run(expr)
+
+    assert soln.success
+    npt.assert_allclose(soln.vars['eta0_V'], 0.)
 
 
 def test_mutable_warning():

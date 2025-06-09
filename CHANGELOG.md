@@ -10,6 +10,11 @@
 
 ### Breaking Changes
 
+## [v0.1.3](https://github.com/NREL/thevenin/tree/v0.1.2)
+
+### Bug Fixes
+- Use `for` loops in `Solution` post-processing if arrays are incompatible ([#16](https://github.com/NREL/thevenin/pull/16))
+
 ## [v0.1.2](https://github.com/NREL/thevenin/tree/v0.1.2)
 
 ### New Features
