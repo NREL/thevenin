@@ -162,8 +162,22 @@ class BaseSolution(IDAResult):
         eta_j = self.y[:, ptr['eta_j']]
         voltage = self.y[:, ptr['V_cell']]
 
-        ocv = sim.ocv(soc)
-        R0 = sim.R0(soc, T_cell)
+        try:
+            ocv = sim.ocv(soc)
+            R0 = sim.R0(soc, T_cell)
+
+            assert isinstance(ocv, np.ndarray)
+            assert isinstance(R0, np.ndarray)
+            assert ocv.shape == soc.shape
+            assert R0.shape == soc.shape
+
+        except (TypeError, AssertionError):
+
+            ocv = np.empty_like(soc)
+            R0 = np.empty_like(soc)
+            for i in range(soc.size):
+                ocv[i] = sim.ocv(soc[i])
+                R0[i] = sim.R0(soc[i], T_cell[i])
 
         current = calculated_current(voltage, ocv, hyst, eta_j, R0)
 
