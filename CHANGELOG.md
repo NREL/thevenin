@@ -8,7 +8,7 @@
 ### Optimizations
 
 ### Bug Fixes
-- Use `for` loops in `Solution` post-processing if arrays are incompatible ()
+- Use `for` loops in `Solution` post-processing if arrays are incompatible ([#18](https://github.com/NREL/thevenin/pull/18))
 
 ### Breaking Changes
 - `initial_state` was renamed to `state0` in `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
