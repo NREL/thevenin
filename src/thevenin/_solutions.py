@@ -7,6 +7,7 @@ from copy import deepcopy
 import atexit
 import numpy as np
 import matplotlib.pyplot as plt
+
 from scipy.integrate import cumulative_trapezoid
 
 from ._ida_solver import IDAResult
@@ -141,8 +142,22 @@ class BaseSolution(IDAResult):
         eta_j = self.y[:, ptr['eta_j']]
         voltage = self.y[:, ptr['V_cell']]
 
-        ocv = model.ocv(soc)
-        R0 = model.R0(soc, T_cell)
+        try:
+            ocv = model.ocv(soc)
+            R0 = model.R0(soc, T_cell)
+
+            assert isinstance(ocv, np.ndarray)
+            assert isinstance(R0, np.ndarray)
+            assert ocv.shape == soc.shape
+            assert R0.shape == soc.shape
+
+        except (TypeError, AssertionError):
+
+            ocv = np.empty_like(soc)
+            R0 = np.empty_like(soc)
+            for i in range(soc.size):
+                ocv[i] = model.ocv(soc[i])
+                R0[i] = model.R0(soc[i], T_cell[i])
 
         current = -(voltage - ocv + np.sum(eta_j, axis=1)) / R0
         capacity = cumulative_trapezoid(-current, x=time/3600., initial=0.)
