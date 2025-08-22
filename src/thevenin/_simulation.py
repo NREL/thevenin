@@ -264,7 +264,7 @@ class Simulation(BaseModel):
         -------
         :class:`~thevenin.Prediction`
             An instance of the Prediction interface, initialized with the same
-            properties ass the current Simulation instance.
+            properties as the current Simulation instance.
 
         """
 
