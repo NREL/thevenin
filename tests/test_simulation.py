@@ -513,3 +513,11 @@ def test_hysteresis():
         -1.*sim_wh.capacity,
         rtol=1e-3,
     )
+
+
+def test_to_prediction():
+
+    sim = thev.Simulation()
+    pred = sim.to_prediction()
+
+    assert sim._get_params_dict == pred._get_params_dict

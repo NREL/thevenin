@@ -1,9 +1,15 @@
 from __future__ import annotations
-from typing import Callable
+from typing import Callable, TypeVar, TYPE_CHECKING
 
 import numpy as np
 
 from thevenin._basemodel import BaseModel
+
+if TYPE_CHECKING:  # pragma: no cover
+    from ._simulation import Simulation
+    from ._solutions import BaseSolution
+
+    Solution = TypeVar('Solution', bound='BaseSolution')
 
 
 class TransientState:
@@ -220,6 +226,45 @@ class Prediction(BaseModel):
         state._set_voltage(voltage)
 
         return state
+
+    def to_simulation(
+        self, state0: bool | Solution | TransientState = True,
+    ) -> Simulation:
+        """
+        Generate a ``Simulation`` class instance with the same properties as
+        the current ``Prediction``.
+
+        Parameters
+        ----------
+        state0 : bool | Solution | TransientState
+            Control how the model state is initialized. If True (default), the
+            state is set to a rested condition at 'soc0'. If False, the state
+            is left alone and only internal checks are run. Given a Solution
+            instance, the state is set to the final state of the solution. See
+            the notes for more information.
+
+        Returns
+        -------
+        :class:`~thevenin.Simulation`
+            An instance of the Simulation interface, initialized with the same
+            properties ass the current Prediction instance.
+
+        Notes
+        -----
+        When initializing based on a Solution instance, the solution must be
+        the same size as the current model. In other words, a 1RC-pair model
+        cannot be initialized by a solution from a 2RC-pair circuit. Similarly,
+        the eta_j size from a TransientState instance must match the size of
+        RC pairs in the current model.
+
+        """
+
+        from ._simulation import Simulation
+
+        sim = Simulation(self._get_params_dict)
+        sim.pre(state0)
+
+        return sim
 
     def _to_state(self, array: np.ndarray) -> TransientState:
         """
