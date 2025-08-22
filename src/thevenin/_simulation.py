@@ -10,7 +10,7 @@ from thevenin._basemodel import BaseModel
 
 if TYPE_CHECKING:  # pragma: no cover
     from ._experiment import Experiment
-    from ._prediction import TransientState
+    from ._prediction import Prediction, TransientState
     from ._solutions import BaseSolution, StepSolution, CycleSolution
 
     Solution = TypeVar('Solution', bound='BaseSolution')
@@ -254,6 +254,23 @@ class Simulation(BaseModel):
             self.pre()
 
         return soln
+
+    def to_prediction(self) -> Prediction:
+        """
+        Generate a ``Prediction`` class instance with the same properties as
+        the current ``Simulation``.
+
+        Returns
+        -------
+        :class:`~thevenin.Prediction`
+            An instance of the Prediction interface, initialized with the same
+            properties as the current Simulation instance.
+
+        """
+
+        from ._prediction import Prediction
+
+        return Prediction(self._get_params_dict)
 
     def _resfn(self, t: float, sv: np.ndarray, svdot: np.ndarray,
                res: np.ndarray, userdata: dict) -> None:

@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/NREL/thevenin)
 
 ### New Features
+- Add `to_simulation` and `to_prediction` methods to switch between interfaces ([#20](https://github.com/NREL/thevenin/pull/20))
 - Allow `TransientState` as an input option to `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
 ### Optimizations

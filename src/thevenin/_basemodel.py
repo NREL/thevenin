@@ -248,6 +248,24 @@ class BaseModel(ABC):
 
         return self.classname
 
+    @property
+    def _get_params_dict(self) -> dict:
+        """Return the params dictionary needed to initialize a new instance."""
+
+        params = {}
+        for k in self._repr_keys:
+            params[k] = getattr(self, k)
+
+        params['ocv'] = self.ocv
+        params['M_hyst'] = self.M_hyst
+        params['R0'] = self.R0
+
+        for j in range(1, self.num_RC_pairs + 1):
+            params['R' + str(j)] = getattr(self, 'R' + str(j))
+            params['C' + str(j)] = getattr(self, 'C' + str(j))
+
+        return params
+
     @abstractmethod
     def pre(self, *args, **kwargs) -> None:  # pragma: no cover
         """Preprocessor: ensure model setup is correct and ready to run."""

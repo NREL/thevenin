@@ -133,3 +133,11 @@ def test_incompatible_state():
 
     with pytest.raises(ValueError):
         _ = pred.take_step(state, 0., 1.)
+
+
+def test_to_simulation():
+
+    pred = thev.Prediction()
+    sim = pred.to_simulation()
+
+    assert pred._get_params_dict == sim._get_params_dict
