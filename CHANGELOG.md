@@ -9,6 +9,7 @@
 ### Optimizations
 
 ### Bug Fixes
+- Fix links to Read the Docs `Development` page in `README` file ([#21](https://github.com/NREL/thevenin/pull/21))
 - Use `for` loops in `Solution` post-processing if arrays are incompatible ([#18](https://github.com/NREL/thevenin/pull/18))
 
 ### Breaking Changes

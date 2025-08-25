@@ -74,7 +74,7 @@ conda install -c conda-forge thevenin
 
 If you run into issues with installation due to the [scikit-sundae](https://github.com/NREL/scikit-sundae) dependency, please submit an issue [here](https://github.com/NREL/scikit-sundae/issues). We also manage this solver package, but distribute it separately since it is not developed in pure Python.
 
-For those interested in setting up a developer and/or editable version of this software, please see the directions available in the "Development" section of our [documentation](https://thevenin.readthedocs.io/en/latest/development).
+For those interested in setting up a developer and/or editable version of this software, please see the directions available in the "Development" section of our [documentation](https://thevenin.readthedocs.io/latest/development).
 
 ## Get Started
 The API is organized around three main classes that allow you to construct the model, define an experiment, and interact with the solution. A basic example for a constant-current discharge is given below. To learn more about the model and see more detailed examples, check out the [documentation](https://thevenin.readthedocs.io/) on Read the Docs. Note that there are two interfaces to the model: `Simulation` and `Prediction`. These are optimized for full timeseries simulations and step-by-step state predictions, respectively.
@@ -116,7 +116,7 @@ For convenience, we also provide the following for your BibTex:
 The motivation and funding for this project came from the Rapid Operational Validation Initiative (ROVI) sponsored by the Office of Electricity. The focus of ROVI is "to greatly reduce time required for emerging energy storage technologies to go from lab to market by developing new tools that will accelerate the testing and validation process needed to ensure commercial success." If interested, you can read more about ROVI [here](https://www.energy.gov/oe/rapid-operational-validation-initiative-rovi).
 
 ## Contributing
-If you'd like to contribute to this package, please look through the existing [issues](https://github.com/NREL/thevenin/issues). If the bug you've caught or the feature you'd like to add isn't already being worked on, please submit a new issue before getting started. You should also read through the [developer guidelines](https://thevenin.readthedocs.io/en/latest/development).
+If you'd like to contribute to this package, please look through the existing [issues](https://github.com/NREL/thevenin/issues). If the bug you've caught or the feature you'd like to add isn't already being worked on, please submit a new issue before getting started. You should also read through the [developer guidelines](https://thevenin.readthedocs.io/latest/development).
 
 ## Disclaimer
 This work was authored by the National Renewable Energy Laboratory (NREL), operated by Alliance for Sustainable Energy, LLC, for the U.S. Department of Energy (DOE). The views expressed in the repository do not necessarily represent the views of the DOE or the U.S. Government.
