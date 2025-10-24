@@ -8,7 +8,7 @@ readme = "README.md"
 dynamic = ["version"]
 description = "Equivalent circuit models in Python."
 keywords = ["ECM", "equivalent", "circuit", "model", "battery"]
-requires-python = ">=3.9,<3.14"
+requires-python = ">=3.10,<3.15"
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 authors = [
@@ -23,18 +23,18 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "numpy",
     "scipy",
     "matplotlib",
     "ruamel.yaml",
-    "scikit-sundae>=1.0.1",
+    "scikit-sundae>=1.1.0rc1",
 ]
 
 [tool.setuptools.dynamic]
