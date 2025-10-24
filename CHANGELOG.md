@@ -3,11 +3,13 @@
 ## [Unreleased](https://github.com/NREL/thevenin)
 
 ### New Features
+- Drop support for Python 3.9 and add support for 3.14 in tests/release ([#23](https://github.com/NREL/thevenin/pull/23))
 - Add version warning banner to docs for dev and older releases ([#22](https://github.com/NREL/thevenin/pull/22))
 - Add `to_simulation` and `to_prediction` methods to switch between interfaces ([#20](https://github.com/NREL/thevenin/pull/20))
 - Allow `TransientState` as an input option to `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
 ### Optimizations
+None.
 
 ### Bug Fixes
 - Fix links to Read the Docs `Development` page in `README` file ([#21](https://github.com/NREL/thevenin/pull/21))
@@ -27,14 +29,14 @@
 - Make `num_RC_pairs` read-only so now `pre` only needs to be called to reset the state ([#13](https://github.com/NREL/thevenin/pull/13))
 - Use `np.testing` where possible in tests for more informative fail statements ([#10](https://github.com/NREL/thevenin/pull/10))
 - Pre-initialize `CycleSolution` arrays rather than appending lists, much faster ([#7](https://github.com/NREL/thevenin/pull/7))
-- Introduce `ExitHandler` to ensure `plt.show` doesn't get registered more than once, replaces `show_plot` option in `Solutions` ([#7](https://github.com/NREL/thevenin/pull/7))
+- Add `ExitHandler` for single `plt.show` registrations, replaces `show_plot` option in `Solutions` ([#7](https://github.com/NREL/thevenin/pull/7))
 
 ### Bug Fixes
 - Change to using `_T_ref` to scale the temperature equation since `T_inf` can be modified ([#12](https://github.com/NREL/thevenin/pull/12))
 - Hyseteresis voltage was missing in `Qgen` heat transfer terms, now incorporated ([#11](https://github.com/NREL/thevenin/pull/11))
 
 ### Breaking Changes
-- New hysteresis option means users will need to update old `params` inputs to also include `gamma` and `M_hyst` ([#7](https://github.com/NREL/thevenin/pull/7))
+- New hysteresis option requires updating old `params` inputs to include `gamma` and `M_hyst` ([#7](https://github.com/NREL/thevenin/pull/7))
 
 ## [v0.1.0](https://github.com/NREL/thevenin/tree/v0.1.0)
 This is the first official release of `thevenin`. Main features/capabilities are listed below.
