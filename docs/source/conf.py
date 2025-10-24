@@ -1,10 +1,10 @@
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# https://sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+# https://sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 import thevenin as thev
 
@@ -18,7 +18,7 @@ json_url = 'https://thevenin.readthedocs.io/latest/_static/switcher.json'
 
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+# https://sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     'sphinx.ext.todo',
@@ -51,7 +51,7 @@ highlight_language = 'console'
 
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# https://sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html
 
 html_theme = 'pydata_sphinx_theme'
@@ -103,7 +103,7 @@ html_theme_options = {
 }
 
 # -- Options for napoleon ----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html
+# https://sphinx-doc.org/en/master/usage/extensions/napoleon.html
 
 napoleon_use_rtype = False
 napoleon_custom_sections = [
