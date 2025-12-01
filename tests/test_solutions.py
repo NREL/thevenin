@@ -191,7 +191,7 @@ def test_np_incompatible_funcs():
     params = dict_params(0)
     params['ocv'] = ocv
 
-    model = thev.Model(params)
+    model = thev.Simulation(params)
     soln = model.run(expr)
 
     assert soln.success
@@ -201,7 +201,7 @@ def test_np_incompatible_funcs():
     params = dict_params(0)
     params['R0'] = R0
 
-    model = thev.Model(params)
+    model = thev.Simulation(params)
     soln = model.run(expr)
 
     assert soln.success
