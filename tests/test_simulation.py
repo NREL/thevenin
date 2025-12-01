@@ -1,7 +1,8 @@
-import pytest
-import thevenin as thev
+import warnings
 
+import pytest
 import numpy as np
+import thevenin as thev
 import numpy.testing as npt
 
 from scipy.integrate import cumulative_trapezoid
@@ -517,7 +518,10 @@ def test_hysteresis():
 
 def test_to_prediction():
 
-    sim = thev.Simulation()
-    pred = sim.to_prediction()
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore', UserWarning)
+
+        sim = thev.Simulation()
+        pred = sim.to_prediction()
 
     assert sim._get_params_dict == pred._get_params_dict

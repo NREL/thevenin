@@ -137,7 +137,10 @@ def test_incompatible_state():
 
 def test_to_simulation():
 
-    pred = thev.Prediction()
-    sim = pred.to_simulation()
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore', UserWarning)
+
+        pred = thev.Prediction()
+        sim = pred.to_simulation()
 
     assert pred._get_params_dict == sim._get_params_dict

@@ -56,8 +56,9 @@ Class Considerations
 For class definitions, we follow a specific ordering convention to make it easier to navigate through the code:
 
 1. **Magic Methods:** These special methods (e.g., ``__init__``, ``__repr__``, etc.) come first. They define key behaviors of the class.
-2. **User-Facing Methods:** These are the public methods intended for external use. They define the class's core functionality for users.
+2. **Special Members:** Any properties, class methods, static methods, etc. Essentially, any decorated and/or "special" methods.
 3. **Hidden Methods:** These are internal methods (denoted with a leading underscore) that handle functionality not meant to be directly accessed by users.
+4. **User-Facing Methods:** These are the public methods intended for external use. They define the class's core functionality for users.
 
 In some cases, exceptions to this order may be made, particularly if moving a hidden method closer to a user-facing method improves readability. However, this should be done with discretion and only when it helps clarify the flow of the class's logic. See below for an example.
 
@@ -66,20 +67,25 @@ In some cases, exceptions to this order may be made, particularly if moving a hi
     class MyClass:
         # Magic Methods
         def __init__(self, value):
-            self.value = value
+            self._value = value
         
         def __repr__(self):
             return f"MyClass(value={self.value})"
-        
-        # User-Facing Methods
-        def do_something(self):
-            self._helper_function()
-            return f"Value is {self.value}"
+
+        # Special Members
+        @property
+        def value(self):
+        return self._value
         
         # Hidden Methods
         def _helper_function(self):
             # Some internal logic
             pass
+        
+        # User-Facing Methods
+        def do_something(self):
+            self._helper_function()
+            return f"Value is {self.value}"
 
 Module Considerations
 ---------------------
