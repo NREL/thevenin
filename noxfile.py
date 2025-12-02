@@ -8,7 +8,7 @@ nox.options.sessions = []
 
 
 @nox.session(name='cleanup', python=False)
-def run_cleanup(_):
+def run_cleanup(_) -> None:
     """Use os/shutil to remove some files/directories"""
 
     if os.path.exists('.coverage'):
@@ -21,7 +21,7 @@ def run_cleanup(_):
 
 
 @nox.session(name='linter', python=False)
-def run_flake8(session):
+def run_flake8(session: nox.Session) -> None:
     """
     Run flake8 with the github config file
 
@@ -40,7 +40,7 @@ def run_flake8(session):
 
 
 @nox.session(name='codespell', python=False)
-def run_codespell(session):
+def run_codespell(session: nox.Session) -> None:
     """
     Run codespell with the github config file
 
@@ -59,7 +59,7 @@ def run_codespell(session):
 
 
 @nox.session(name='spellcheck', python=False)
-def run_spellcheck(session):
+def run_spellcheck(session: nox.Session) -> None:
     """
     Run codespell with docs files included
 
@@ -79,7 +79,7 @@ def run_spellcheck(session):
 
 
 @nox.session(name='tests', python=False)
-def run_pytest(session):
+def run_pytest(session: nox.Session) -> None:
     """
     Run pytest and generate test/coverage reports
 
@@ -120,7 +120,7 @@ def run_pytest(session):
 
 
 @nox.session(name='badges', python=False)
-def run_genbadge(session):
+def run_genbadge(session: nox.Session) -> None:
     """Run genbadge to make test/coverage badges"""
 
     session.run(
@@ -137,7 +137,7 @@ def run_genbadge(session):
 
 
 @nox.session(name='docs', python=False)
-def run_sphinx(session):
+def run_sphinx(session: nox.Session) -> None:
     """
     Run spellcheck and then use sphinx to build docs
 
@@ -166,7 +166,7 @@ def run_sphinx(session):
 
 
 @nox.session(name='pre-commit', python=False)
-def run_pre_commit(session):
+def run_pre_commit(session: nox.Session) -> None:
     """
     Run all linters/tests and make new badges
 

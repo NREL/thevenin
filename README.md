@@ -10,8 +10,8 @@
 ![coverage][cov-b] &nbsp;
 [![pep8][pep-b]][pep-l]
 
-[ci-b]: https://github.com/NREL/thevenin/actions/workflows/ci.yaml/badge.svg
-[ci-l]: https://github.com/NREL/thevenin/actions/workflows/ci.yaml
+[ci-b]: https://github.com/NREL/thevenin/actions/workflows/ci.yml/badge.svg
+[ci-l]: https://github.com/NREL/thevenin/actions/workflows/ci.yml
 
 [test-b]: https://github.com/NREL/thevenin/blob/main/images/tests.svg?raw=true
 [cov-b]: https://github.com/NREL/thevenin/blob/main/images/coverage.svg?raw=true

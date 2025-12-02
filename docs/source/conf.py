@@ -22,10 +22,10 @@ json_url = 'https://thevenin.readthedocs.io/latest/_static/switcher.json'
 
 extensions = [
     'sphinx.ext.todo',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
     'autoapi.extension',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon',
     'myst_nb',
     'sphinx_design',
     # 'sphinx_favicon',
@@ -56,7 +56,7 @@ highlight_language = 'console'
 
 html_theme = 'pydata_sphinx_theme'
 
-# html_favicon = 'static/favicon.ico'
+# html_favicon = '_static/favicon.ico'
 html_context = {'default_mode': 'dark'}
 
 html_static_path = ['_static']
@@ -67,8 +67,8 @@ html_sidebars = {'index': [], '**': ['sidebar-nav-bs']}
 
 html_theme_options = {
     # 'logo': {
-    #     'image_light': 'static/light.png',
-    #     'image_dark': 'static/dark.png'
+    #     'image_light': '_static/light.svg',
+    #     'image_dark': '_static/dark.svg',
     # },
     'icon_links': [
         {
@@ -107,8 +107,8 @@ html_theme_options = {
 
 napoleon_use_rtype = False
 napoleon_custom_sections = [
-    "Summary",
-    "Accessing the documentation",
+    'Summary',
+    'Accessing the documentation',
 ]
 
 

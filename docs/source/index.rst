@@ -133,6 +133,3 @@ The Thevenin equivalent circuit model is a common low-fidelity battery model con
          :click-parent:
 
          Read contributor guidelines
-
-   
-            

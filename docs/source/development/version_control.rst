@@ -35,7 +35,7 @@ The ``thevenin`` project uses GitHub Flow as its version control model due to it
 
 .. figure:: figures/github_flow.png
    :align: center
-   :alt: Two-RC-pair Thevenin circuit.
+   :alt: GitHub flow diagram.
    :width: 75%
 
 Key Features
