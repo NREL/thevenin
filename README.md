@@ -93,22 +93,24 @@ soln.plot('time_h', 'voltage_V')
 
 **Notes:**
 * If you are new to Python, check out [Spyder IDE](https://www.spyder-ide.org/). Spyder is a powerful interactive development environment (IDE) that can make programming in Python more approachable to new users.
+* Another friendly option for getting started in Python is to use [Jupyter Notebooks](https://jupyter.org/). We write our examples in Jupyter Notebooks since they support both markdown blocks for explanations and executable code blocks.
+* Python, Spyder, and Jupyter Notebooks can be setup using [Anaconda](https://www.anaconda.com/download/success). Anaconda provides a convenient way for new users to get started with Python due to its friendly graphical installer and environment manager.
 
 ## Citing this Work
 This work was authored by researchers at the National Renewable Energy Laboratory (NREL). If you use this package in your work, please include the following citation:
 
-> Randall, Corey R. "thevenin: Equivalent circuit models in Python [SWR-24-132]." Computer software, Nov. 2024. url: https://github.com/NREL/thevenin. doi: https://doi.org/10.11578/dc.20241125.2.
+> Randall, Corey R. "thevenin: Equivalent circuit models in Python [SWR-24-132]." Computer software, Nov. 2024. url: [github.com/NREL/thevenin](https://github.com/NREL/thevenin). doi: [10.11578/dc.20241125.2](https://doi.org/10.11578/dc.20241125.2).
 
 For convenience, we also provide the following for your BibTex:
 
 ```
 @misc{Randall-2024,
-  title = {{thevenin: Equivalent circuit models in Python [SWR-24-132]}},
   author = {Randall, Corey R.},
-  doi = {10.11578/dc.20241125.2},
-  url = {https://github.com/NREL/thevenin},
+  title = {{thevenin: Equivalent circuit models in Python [SWR-24-132]}},
+  url = {github.com/NREL/thevenin},
   month = {Nov.},
   year = {2024},
+  doi = {10.11578/dc.20241125.2},
 }
 ```
 

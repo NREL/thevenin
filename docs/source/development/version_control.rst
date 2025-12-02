@@ -90,7 +90,7 @@ If you are patching ``main``, follow the directions in the :ref:`New features` s
     git push origin --delete bugfix/description-123
     git fetch --prune
 
-6. Repeat this processes as necessary to patch additional older versions. Unfortunately, each version needs to be patched individually, which creates more work for developers, and is the reason we prioritize which (and how many) versions get patched. However, patches should never skip versions when applied many. For example, if a patch is submitted for ``v1.1.x``, then it should also be applied to ``v1.2.x`` and above (up to and including ``main``), but it does not necessarily need to be submitted for ``v1.0.x``. Before submitting patches for older versions, we recommend confirming with the development team. Some releases may no longer be eligible for new patch updates.
+6. Repeat this processes as necessary to patch additional older versions. Unfortunately, each version needs to be patched individually, which creates more work for developers, and is the reason we prioritize which (and how many) versions get patched. However, patches should never skip versions when applied to many. For example, if a patch is submitted for ``v1.1.x``, then it should also be applied to ``v1.2.x`` and above (up to and including ``main``), but it does not necessarily need to be submitted for ``v1.0.x``. Before submitting patches for older versions, we recommend confirming with the development team. Some releases may no longer be eligible for new patch updates.
 
 .. _New features:
 
