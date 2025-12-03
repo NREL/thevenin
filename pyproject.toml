@@ -44,7 +44,7 @@ version = {attr = "thevenin.__version__"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-thevenin = ["templates/*.yaml"]
+thevenin = ["_resources/*.yaml"]
 
 [project.optional-dependencies]
 docs = [
