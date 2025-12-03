@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import re
 import os
+import pathlib
 import warnings
+
 from abc import ABC, abstractmethod
 
 import numpy as np
+
 from ruamel.yaml import YAML, add_constructor, SafeConstructor
 
 
@@ -157,7 +160,6 @@ class BaseModel(ABC):
         then you will need to create a separate instance.
 
         """
-
         if isinstance(params, dict):
             params = params.copy()
         elif isinstance(params, str):
@@ -327,7 +329,6 @@ class BaseModel(ABC):
             class, but contains an extra algebraic expression for 'Simulation'.
 
         """
-
         ptr = self._ptr
         rhs = np.zeros(ptr['size'])
 
@@ -440,7 +441,6 @@ def _yaml_reader(file: str) -> dict:
         Data dictionary corresponding to the input file.
 
     """
-
     _, extension = os.path.splitext(file)
 
     if extension == '':
@@ -449,11 +449,11 @@ def _yaml_reader(file: str) -> dict:
         raise ValueError("Invalid file. Only supports '.yaml' files.")
 
     here = os.path.dirname(__file__)
-    templates = here + '/templates'
+    resources = pathlib.Path(here).joinpath('_resources')
 
-    if file in os.listdir(templates):
+    if file in os.listdir(resources):
         short_warn(f"Using the default parameter file '{file}'.")
-        file = templates + '/' + file
+        file = resources.joinpath(file)
 
     def eval_constructor(loader, node):
         return eval(node.value)

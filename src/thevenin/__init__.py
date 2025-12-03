@@ -22,6 +22,9 @@ from ._experiment import Experiment
 from ._simulation import Simulation
 from ._prediction import TransientState, Prediction
 from ._solutions import StepSolution, CycleSolution
+from ._templates import (
+    download_templates, list_templates, load_templates, print_templates,
+)
 
 # submodules
 from . import loadfns
@@ -37,6 +40,10 @@ __all__ = [
     'Prediction',
     'StepSolution',
     'CycleSolution',
+    'download_templates',
+    'list_templates',
+    'load_templates',
+    'print_templates',
     'loadfns',
     'plotutils',
     'solvers',
