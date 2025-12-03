@@ -3,6 +3,7 @@
 ## [Unreleased](https://github.com/NREL/thevenin)
 
 ### New Features
+- New functions to list, load, print, and download `.yaml` templates ([#26](https://github.com/NREL/thevenin/pull/26))
 - Drop support for Python 3.9 and add support for 3.14 in tests/release ([#23](https://github.com/NREL/thevenin/pull/23))
 - Add version warning banner to docs for dev and older releases ([#22](https://github.com/NREL/thevenin/pull/22))
 - Add `to_simulation` and `to_prediction` methods to switch between interfaces ([#20](https://github.com/NREL/thevenin/pull/20))
