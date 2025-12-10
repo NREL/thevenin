@@ -40,7 +40,7 @@ Technology Stack
 
 Project Origins
 ---------------
-``thevenin`` was developed by researchers at the **National Renewable Energy Laboratory (NREL)** as part of the **Rapid Operational Validation Initiative (ROVI)**, a project funded by the **Office of Electricity**. The ROVI project aims to streamline the process of validating new battery technologies and chemistries as they enter the market. ``thevenin`` contributes to this effort by providing a tool that models battery performance with flexibility and speed. If interested, you can read more about ROVI `here <https://www.energy.gov/oe/rapid-operational-validation-initiative-rovi>`_.
+``thevenin`` was developed by researchers at the **National Laboratory of the Rockies (NLR)** as part of the **Rapid Operational Validation Initiative (ROVI)**, a project funded by the **Office of Electricity**. The ROVI project aims to streamline the process of validating new battery technologies and chemistries as they enter the market. ``thevenin`` contributes to this effort by providing a tool that models battery performance with flexibility and speed. If interested, you can read more about ROVI `here <https://www.energy.gov/oe/rapid-operational-validation-initiative-rovi>`_.
 
 Roadmap and Future Directions
 -----------------------------

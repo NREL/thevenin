@@ -20,6 +20,9 @@ None.
 ### Breaking Changes
 - `initial_state` was renamed to `state0` in `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
+### Chores
+None.
+
 ## [v0.2.0](https://github.com/NREL/thevenin/tree/v0.2.0)
 
 ### New Features
