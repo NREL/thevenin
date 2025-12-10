@@ -15,6 +15,6 @@ The thevenin package is particularly useful for battery modeling and simulation,
 
 Acknowledgements
 ================
-This work was authored by the National Renewable Energy Laboratory (NREL), operated by Alliance for Sustainable Energy, LLC, for the U.S. Department of Energy (DOE). The views expressed in the package and its documentation do not necessarily represent the views of the DOE or the U.S. Government.
+This work was authored by the National Laboratory of the Rockies (NLR), operated by Alliance for Energy Innovation, LLC, for the U.S. Department of Energy (DOE). The views expressed in the package and its documentation do not necessarily represent the views of the DOE or the U.S. Government.
 
 The motivation and funding for this project came from the Rapid Operational Validation Initiative (ROVI) sponsored by the Office of Electricity. The focus of ROVI is "to greatly reduce time required for emerging energy storage technologies to go from lab to market by developing new tools that will accelerate the testing and validation process needed to ensure commercial success." If interested, you can read more about ROVI `here <https://www.energy.gov/oe/rapid-operational-validation-initiative-rovi>`_.

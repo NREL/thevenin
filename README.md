@@ -97,7 +97,7 @@ soln.plot('time_h', 'voltage_V')
 * Python, Spyder, and Jupyter Notebooks can be setup using [Anaconda](https://www.anaconda.com/download/success). Anaconda provides a convenient way for new users to get started with Python due to its friendly graphical installer and environment manager.
 
 ## Citing this Work
-This work was authored by researchers at the National Renewable Energy Laboratory (NREL). If you use this package in your work, please include the following citation:
+This work was authored by researchers at the National Laboratory of the Rockies (NLR). If you use this package in your work, please include the following citation:
 
 > Randall, Corey R. "thevenin: Equivalent circuit models in Python [SWR-24-132]." Computer software, Nov. 2024. url: [github.com/NREL/thevenin](https://github.com/NREL/thevenin). doi: [10.11578/dc.20241125.2](https://doi.org/10.11578/dc.20241125.2).
 
@@ -121,4 +121,4 @@ The motivation and funding for this project came from the Rapid Operational Vali
 If you'd like to contribute to this package, please look through the existing [issues](https://github.com/NREL/thevenin/issues). If the bug you've caught or the feature you'd like to add isn't already being worked on, please submit a new issue before getting started. You should also read through the [developer guidelines](https://thevenin.readthedocs.io/latest/development).
 
 ## Disclaimer
-This work was authored by the National Renewable Energy Laboratory (NREL), operated by Alliance for Sustainable Energy, LLC, for the U.S. Department of Energy (DOE). The views expressed in the repository do not necessarily represent the views of the DOE or the U.S. Government.
+This work was authored by the National Laboratory of the Rockies (NLR), operated by Alliance for Energy Innovation, LLC, for the U.S. Department of Energy (DOE). The views expressed in the repository do not necessarily represent the views of the DOE or the U.S. Government.
