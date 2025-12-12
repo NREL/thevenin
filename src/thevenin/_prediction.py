@@ -21,14 +21,14 @@ class TransientState:
         This class allows the user to manage the state when working with model
         classes. The user only has control over independent state variables
         (i.e., soc, T_cell, hyst, eta_j). The :class:`~thevenin.Prediction`
-        interface requires an instance of the ``TransientState`` each time a
+        interface requires an instance of the `TransientState` each time a
         prediction step is made. You can optionally use instances of this class
         to define the starting state of :class:`~thevenin.Simulation` instances
-        using their ``pre()`` method. In general, however, the model interface
+        using their `pre()` method. In general, however, the model interface
         for simulations is more limited when it comes to user-defined states.
 
-        The read-only ``voltage`` property will return None if the state was
-        user defined. If instead the state was returned by the ``Prediction``
+        The read-only `voltage` property will return None if the state was
+        user defined. If instead the state was returned by the `Prediction`
         class, the value will be the predicted voltage after a given step.
 
         Parameters
@@ -114,10 +114,10 @@ class Prediction(BaseModel):
     class instead.
 
     Note that this class and the :class:`~thevenin.Simulation` class share the
-    same ``params`` inputs. This is for convenience so that users can easily
+    same `params` inputs. This is for convenience so that users can easily
     switch between the two. However, the 'soc0' value has no real meaning for
     the prediction interface. Instead, the user manages the state of charge for
-    each step through the ``TransientState`` interface. This means that you can
+    each step through the `TransientState` interface. This means that you can
     effectively ignore the 'soc0' input when using this class.
 
     """
@@ -127,7 +127,7 @@ class Prediction(BaseModel):
         Pre-process and prepare the model to make predictions. Specifically,
         this method builds pointers so it can manage mapping the state back
         and forth between the solver-required array format and the user-managed
-        ``TransientState`` class.
+        `TransientState` class.
 
         Returns
         -------
@@ -191,7 +191,7 @@ class Prediction(BaseModel):
             Description of the starting state.
         current : float | Callable
             Demand current [A]. For a dynamic current, use a callable with a
-            signature like ``def current(t: float) -> float``, where the input
+            signature like `def current(t: float) -> float`, where the input
             time is in seconds relative to the overall step.
         delta_t : float
             Magnitude of time step, in seconds.
@@ -231,8 +231,8 @@ class Prediction(BaseModel):
         self, state0: bool | Solution | TransientState = True,
     ) -> Simulation:
         """
-        Generate a ``Simulation`` class instance with the same properties as
-        the current ``Prediction``.
+        Generate a `Simulation` class instance with the same properties as
+        the current `Prediction`.
 
         Parameters
         ----------

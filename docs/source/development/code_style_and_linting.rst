@@ -4,15 +4,15 @@ Maintaining a consistent code style and adhering to linting rules is crucial for
 
 Styling Guidelines
 ------------------
-We adhere to `PEP8 <https://peps.python.org/pep-0008/>`_ with minimal exceptions. Minor adjustments to spacing (around operators, under/over-indentation) are allowed when they improve clarity. We include a ``.flake8`` configuration file in ``.github/linters`` that specifies these exceptions. Developers should configure their IDEs with this file to ensure consistency.
+We adhere to `PEP8 <https://peps.python.org/pep-0008/>`_ with minimal exceptions. Minor adjustments to spacing (around operators, under/over-indentation) are allowed when they improve clarity. We include a `.flake8` configuration file in `.github/linters` that specifies these exceptions. Developers should configure their IDEs with this file to ensure consistency.
 
 Code Formatting
 ---------------
-While `black <https://black.readthedocs.io/en/stable/>`_ is a popular auto-formatting package, we do not permit it to be used for this codebase. Although it adheres to the same PEP8 standards that we follow, the ``black`` styling can be a bit more opinionated at times and does not always help improve clarity. For those still looking for auto-formatting, we permit the use of `autopep8 <https://github.com/hhatto/autopep8>`_ is when paired with the ``.flake8`` configuration file found in ``.github/linters``. IDEs supporting ``autopep8`` should be configured accordingly. Developers can also run the formatter manually using::
+While `black <https://black.readthedocs.io/en/stable/>`_ is a popular auto-formatting package, we do not permit it to be used for this codebase. Although it adheres to the same PEP8 standards that we follow, the `black` styling can be a bit more opinionated at times and does not always help improve clarity. For those still looking for auto-formatting, we permit the use of `autopep8 <https://github.com/hhatto/autopep8>`_ is when paired with the `.flake8` configuration file found in `.github/linters`. IDEs supporting `autopep8` should be configured accordingly. Developers can also run the formatter manually using::
 
     nox -s linter -- format 
 
-When used with the optional ``format`` argument, this ``nox`` command will first run the auto-formatter and then check for errors. This means that is errors persist, then ``autopep8`` was unable to address them and that they must be addressed manually.
+When used with the optional `format` argument, this `nox` command will first run the auto-formatter and then check for errors. This means that is errors persist, then `autopep8` was unable to address them and that they must be addressed manually.
 
 Enforcement
 -----------
@@ -36,7 +36,7 @@ When it comes to string quotation, we have a few specific preferences to maintai
 
 * **Single quotes:** 
 
-    Use single quotes (``'``) for string variables, dictionary keys, and other standard strings. For example:
+    Use single quotes (`'`) for string variables, dictionary keys, and other standard strings. For example:
 
     .. code-block:: python
 
@@ -45,7 +45,7 @@ When it comes to string quotation, we have a few specific preferences to maintai
 
 * **Double quotes:** 
 
-    Use double quotes (``"``) for strings that are part of exception messages, print statements, or special string types such as formatted or raw strings. For example:
+    Use double quotes (`"`) for strings that are part of exception messages, print statements, or special string types such as formatted or raw strings. For example:
 
     .. code-block:: python
 

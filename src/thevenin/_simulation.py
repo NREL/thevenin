@@ -25,8 +25,8 @@ class Simulation(BaseModel):
     Note that this version of the model interface manages its own internal
     state. The user has limited ability to directly control the state. At the
     beginning of all simulations, the model is assumed in a fully rested state
-    at the user-supplied state-of-charge ``soc0``. Through the pre-processor
-    method ``pre()`` you can manually force the state to start at a value given
+    at the user-supplied state-of-charge `soc0`. Through the pre-processor
+    method `pre()` you can manually force the state to start at a value given
     a previous solution, or using a :class:`~thevenin.TransientState` instance
     for maximum control.
 
@@ -56,9 +56,9 @@ class Simulation(BaseModel):
         -----
         This method runs during the class initialization. It generally does not
         have to be run again unless you want to reset the internal hidden state.
-        Using the ``state0`` argument, you can set the state back to a rested
-        condition at 'soc0', to the final value from a ``Solution``, or to a
-        user-defined state given by a ``TransientState`` instance.
+        Using the `state0` argument, you can set the state back to a rested
+        condition at 'soc0', to the final value from a `Solution`, or to a
+        user-defined state given by a `TransientState` instance.
 
         When initializing based on a Solution instance, the solution must be
         the same size as the current model. In other words, a 1RC-pair model
@@ -150,9 +150,9 @@ class Simulation(BaseModel):
         -------
         The model's internal state is changed at the end of each experimental
         step. Consequently, you should not run steps out of order. You should
-        always start with ``stepidx = 0`` and then progress to the subsequent
+        always start with `stepidx = 0` and then progress to the subsequent
         steps afterward. If at any time you want to reset the internal hidden
-        state back to a rested condition, use ``pre()``.
+        state back to a rested condition, use `pre()`.
 
         See also
         --------
@@ -161,7 +161,7 @@ class Simulation(BaseModel):
 
         Notes
         -----
-        Using ``run()`` loops through all steps in an experiment and stitches
+        Using `run()` loops through all steps in an experiment and stitches
         their solutions together. Most of the time, this is more convenient.
         However, running step-by-step provides maximum control to fine tune
         solver options. It also allows for complex analyses and/or control
@@ -227,11 +227,11 @@ class Simulation(BaseModel):
         Warning
         -------
         The default behavior resets the model's internal state back to a rested
-        condition at 'soc0' by calling the ``pre()`` method at the end of all
+        condition at 'soc0' by calling the `pre()` method at the end of all
         steps. This means that if you run a second experiment afterward, it
         will not start where the previous one left off. Instead, it will start
         from the original rested condition that the model initialized with. You
-        can bypass this by using ``reset_state=False``, which keeps the state
+        can bypass this by using `reset_state=False`, which keeps the state
         at the end of the final experimental step.
 
         See also
@@ -257,8 +257,8 @@ class Simulation(BaseModel):
 
     def to_prediction(self) -> Prediction:
         """
-        Generate a ``Prediction`` class instance with the same properties as
-        the current ``Simulation``.
+        Generate a `Prediction` class instance with the same properties as
+        the current `Simulation`.
 
         Returns
         -------

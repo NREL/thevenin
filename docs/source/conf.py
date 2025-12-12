@@ -9,8 +9,9 @@
 import thevenin as thev
 
 project = 'thevenin'
-copyright = 'Alliance for Energy Innovation, LLC'
 author = 'Corey R. Randall'
+copyright = 'Alliance for Energy Innovation, LLC'
+
 version = thev.__version__
 release = thev.__version__
 
@@ -24,8 +25,8 @@ extensions = [
     'sphinx.ext.todo',
     'autoapi.extension',
     'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
     'myst_nb',
     'sphinx_design',
     # 'sphinx_favicon',
@@ -42,11 +43,12 @@ exclude_patterns = [
 ]
 
 source_suffix = {
-    '.rst': 'restructuredtext',
-    '.ipynb': 'myst-nb',
     '.myst': 'myst-nb',
+    '.ipynb': 'myst-nb',
+    '.rst': 'restructuredtext',
 }
 
+default_role = 'literal'
 highlight_language = 'console'
 
 
@@ -115,13 +117,13 @@ napoleon_custom_sections = [
 # -- Options for autoapi -----------------------------------------------------
 # https://sphinx-autoapi.readthedocs.io/en/latest/reference/config.html
 
-autoapi_type = 'python'
-autoapi_dirs = ['../../src/thevenin']
-autoapi_keep_files = True
 autoapi_root = 'api'
-autoapi_member_order = 'groupwise'
+autoapi_type = 'python'
+autoapi_keep_files = True
 autodoc_typehints = 'none'
+autoapi_member_order = 'groupwise'
 autoapi_python_class_content = 'both'
+autoapi_dirs = ['../../src/thevenin']
 autoapi_options = [
     'members',
     'imported-members',

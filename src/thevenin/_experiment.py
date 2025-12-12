@@ -11,11 +11,11 @@ class Experiment:
 
     def __init__(self, **kwargs) -> None:
         """
-        A class to define an experimental protocol. Use the ``add_step()``
+        A class to define an experimental protocol. Use the `add_step()`
         method sequential steps to run. Each step defines a control mode, a
         constant or time-dependent load profile, a time span, and optional
         limiting criteria to stop the step early if a specified event/state
-        is detected. Note that ``Experiment`` is designed to only interface
+        is detected. Note that `Experiment` is designed to only interface
         with the :class:`thevenin.Simulation` model wrapper.
 
         Parameters
@@ -29,7 +29,7 @@ class Experiment:
             The solver class, with documentation for most keyword arguments
             that you might want to adjust.
         ~thevenin.Simulation :
-            The correct model interface to use with the ``Experiment`` class.
+            The correct model interface to use with the `Experiment` class.
 
         """
 
@@ -114,7 +114,7 @@ class Experiment:
         tspan : tuple | 1D np.array
             Relative times for recording solution [s]. Providing a tuple as
             (t_max: float, Nt: int) or (t_max: float, dt: float) constructs
-            tspan using ``np.linspace`` or ``np.arange``, respectively. Given
+            tspan using `np.linspace` or `np.arange`, respectively. Given
             an array uses the values supplied as the evaluation times. Arrays
             must be monotonically increasing and start with zero. See the notes
             for more information.
@@ -161,16 +161,16 @@ class Experiment:
         Notes
         -----
         For time-dependent loads, use a Callable for 'value' with a function
-        signature like ``def load(t: float) -> float``, where 't' is the step's
+        signature like `def load(t: float) -> float`, where 't' is the step's
         relative time, in seconds.
 
         Solution times are constructed and saved depending on the 'tspan' input
         types that were supplied:
 
         * Given (float, int):
-            ``tspan = np.linspace(0., tspan[0], tspan[1])``
+            `tspan = np.linspace(0., tspan[0], tspan[1])`
         * Given (float, float):
-            ``tspan = np.arange(0., tspan[0], tspan[1])``
+            `tspan = np.arange(0., tspan[0], tspan[1])`
 
             In this case, 't_max' is also appended to the end. This results
             in the final 'dt' being different from the others if 't_max' is
