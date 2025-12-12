@@ -12,10 +12,10 @@ Naming Convention
 To ensure consistency and ease of development, the following conventions are enforced:
 
 1. File names: 
-    All file names begin with a leading underscore (``_``) to prevent them from showing up in an editor's tab completion window. File names also use snake case (e.g., ``_my_class.py``) and are generally short but descriptive. Typically, the name of the file should reflect the class or function it contains.
+    All file names begin with a leading underscore (`_`) to prevent them from showing up in an editor's tab completion window. File names also use snake case (e.g., `_my_class.py`) and are generally short but descriptive. Typically, the name of the file should reflect the class or function it contains.
 
 2. Class and function names: 
-    Classes use ``CamelCase``, while functions and methods use ``snake_case``. Classes should generally be in their own file unless grouped logically with others.
+    Classes use `CamelCase`, while functions and methods use `snake_case`. Classes should generally be in their own file unless grouped logically with others.
 
 Import Considerations
 ---------------------
@@ -25,7 +25,7 @@ Ordering
 In our codebase, import statements are organized into three distinct groups based on where the modules originate. This helps keep imports clean and maintainable. The groups, in order, are:
 
 1. **Standard Library Imports:** These come from Python's built-in standard library.
-2. **Dependency Imports:** Imports from external dependencies installed via package managers (e.g., ``pip`` or ``conda``).
+2. **Dependency Imports:** Imports from external dependencies installed via package managers (e.g., `pip` or `conda`).
 3. **Local Package Imports:** Imports that come from within our package.
 
 Within each group, we generally list imports in ascending order of their length (shortest to longest), as shown in the example below. This helps maintain a neat and consistent style throughout the code. Note that it is not necessary to comment each grouped section, this is only done for clarity in the example.
@@ -55,7 +55,7 @@ Class Considerations
 --------------------
 For class definitions, we follow a specific ordering convention to make it easier to navigate through the code:
 
-1. **Magic Methods:** These special methods (e.g., ``__init__``, ``__repr__``, etc.) come first. They define key behaviors of the class.
+1. **Magic Methods:** These special methods (e.g., `__init__`, `__repr__`, etc.) come first. They define key behaviors of the class.
 2. **Special Members:** Any properties, class methods, static methods, etc. Essentially, any decorated and/or "special" methods.
 3. **Hidden Methods:** These are internal methods (denoted with a leading underscore) that handle functionality not meant to be directly accessed by users.
 4. **User-Facing Methods:** These are the public methods intended for external use. They define the class's core functionality for users.
@@ -103,12 +103,12 @@ For ease of development, tools and dependencies for linting, formatting, spellch
 
     pip install -e .[dev]
 
-In addition, developers should use ``nox`` to automate many tasks:
+In addition, developers should use `nox` to automate many tasks:
 
-* ``nox -s tests`` - run tests with coverage reports
-* ``nox -s linter`` - lint and format the code
-* ``nox -s codespell`` - check for and fix misspellings
-* ``nox -s pre-commit`` - run pre-commit checks (all above)
-* ``nox -s docs`` - build the documentation
+* `nox -s tests` - run tests with coverage reports
+* `nox -s linter` - lint and format the code
+* `nox -s codespell` - check for and fix misspellings
+* `nox -s pre-commit` - run pre-commit checks (all above)
+* `nox -s docs` - build the documentation
 
 Use these tools to ensure the code remains clean and follows best practices.

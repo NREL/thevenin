@@ -415,15 +415,15 @@ class CycleSolution(BaseSolution):
 
         Notes
         -----
-        The ``t_shift`` input only affects the shift between the current and
-        new solutions. For example if two ``CycleSolution`` had original shifts
+        The `t_shift` input only affects the shift between the current and
+        new solutions. For example if two `CycleSolution` had original shifts
         of 1 and 5 for their respective steps when stitched, this appended case
-        will still have 1 for the first few steps, ``t_shift`` between, and 5
+        will still have 1 for the first few steps, `t_shift` between, and 5
         for the shifts between the latter half's steps.
 
         Appending solutions cannot simply be undone. If you think you may want
         to go back to an instance prior to appending another solution then you
-        should create a copy to operate on. Use ``copy.deepcopy`` from Python's
+        should create a copy to operate on. Use `copy.deepcopy` from Python's
         standard library to make sure the copy is memory safe, i.e., the two
         instances do not share any common memory.
 

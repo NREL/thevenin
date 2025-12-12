@@ -12,7 +12,7 @@ def download_templates(path: str | os.PathLike | None = None) -> None:
     Parameters
     ----------
     path : str or PathLike or None, optional
-        Path to parent directory where a new ``thevenin_templates`` folder will
+        Path to parent directory where a new `thevenin_templates` folder will
         be created and example templates will be copied to. If None (default),
         the current working directory is used.
 
@@ -36,7 +36,7 @@ def list_templates() -> list[str]:
     Returns
     -------
     names : list[str]
-        A list of example file names from an internal ``resources`` folder.
+        A list of example file names from an internal `resources` folder.
 
     """
     resources = pathlib.Path(os.path.dirname(__file__), '_resources')
@@ -51,13 +51,13 @@ def load_templates(*names: str) -> dict:
     ----------
     *names : str
         One or more names of example template files to load. See options with
-        ``list_templates()``.
+        `list_templates()`.
 
     Returns
     -------
     templates : dict or tuple[dict]
         A single template dictionary if one name is provided, or a tuple of
-        template dictionaries in the same order as the given ``names``.
+        template dictionaries in the same order as the given `names`.
 
     Raises
     ------
@@ -98,7 +98,7 @@ def print_templates(name: str) -> None:
     Parameters
     ----------
     name : str
-        Name of a template file to print. See options with ``list_templates()``.
+        Name of a template file to print. See options with `list_templates()`.
 
     Raises
     ------

@@ -3,7 +3,7 @@ Issues and Features
 
 Overview 
 --------
-Before starting on a bug fix or developing a new feature for ``thevenin``, please follow the steps outlined below to ensure efficient collaboration and alignment with the project's goals. Whether you're reporting a bug, suggesting a feature, or volunteering to work on an issue, these guidelines will help maintain smooth development and communication.
+Before starting on a bug fix or developing a new feature for `thevenin`, please follow the steps outlined below to ensure efficient collaboration and alignment with the project's goals. Whether you're reporting a bug, suggesting a feature, or volunteering to work on an issue, these guidelines will help maintain smooth development and communication.
 
 Steps to Report an Issue
 ------------------------
@@ -57,4 +57,4 @@ Remember:
 
 Getting Help
 ------------
-If you're unsure whether your contribution fits within the scope of the project or if you need help getting started, feel free to ask questions by commenting on issues or reaching out to the maintainers. Collaboration is key to the success of ``thevenin``, and we're here to support you.
+If you're unsure whether your contribution fits within the scope of the project or if you need help getting started, feel free to ask questions by commenting on issues or reaching out to the maintainers. Collaboration is key to the success of `thevenin`, and we're here to support you.

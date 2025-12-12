@@ -141,19 +141,19 @@ class BaseModel(ABC):
         Notes
         -----
         The 'ocv' and 'M_hyst' properties need to be callables with signatures
-        like ``f(soc: float) -> float``, where 'soc' is the state of charge.
+        like `f(soc: float) -> float`, where 'soc' is the state of charge.
         All other properties that require callables (e.g., R0, Rj, and Cj) need
-        signatures like ``f(soc: float, T_cell: float) -> float``, with 'T_cell'
+        signatures like `f(soc: float, T_cell: float) -> float`, with 'T_cell'
         being the cell temperature in K.
 
         Rj and Cj are not real property names. These are used generally in the
-        documentation. If ``num_RC_pairs=1`` then in addition to R0, you should
-        define R1 and C1. If ``num_RC_pairs=2`` then you should also give R2
-        and C2, etc. For the special case where ``num_RC_pairs=0``, you should
+        documentation. If `num_RC_pairs=1` then in addition to R0, you should
+        define R1 and C1. If `num_RC_pairs=2` then you should also give R2
+        and C2, etc. For the special case where `num_RC_pairs=0`, you should
         not provide any resistance or capacitance values besides the series
         resistance R0, which is always required.
 
-        While most parameters can be dynamically updated, the ``num_RC_pairs``
+        While most parameters can be dynamically updated, the `num_RC_pairs`
         attribute is read-only. Consequently, you cannot add nor remove Rj and
         Cj attributes. However, modifying the values of Rj and Cj functions
         is allowed. If you need a circuit with a different number of RC pairs
@@ -306,8 +306,8 @@ class BaseModel(ABC):
         """
         Right-hand-side functions.
 
-        Given a DAE of the form ``M*yp = f(t, y)``, this function represents
-        the right-hand-side ``f(t, y)``. For the 'Simulation' class, M has a
+        Given a DAE of the form `M*yp = f(t, y)`, this function represents
+        the right-hand-side `f(t, y)`. For the 'Simulation' class, M has a
         single zero-element diagonal term for the algebraic expression used to
         solve for the cell voltage, making the system a DAE. When the system
         of equations is accessed via the 'Prediction' class, only the pure ODE
@@ -419,8 +419,8 @@ def _yaml_reader(file: str) -> dict:
     """
     Read a yaml file.
 
-    This yaml reader has a custom ``!eval`` constructor, which allows you to
-    evaluate ``np`` expressions and ``lambda`` functions.
+    This yaml reader has a custom `!eval` constructor, which allows you to
+    evaluate `np` expressions and `lambda` functions.
 
     Parameters
     ----------
@@ -477,7 +477,7 @@ def formatwarning(message, category, filename, lineno, line=None):
 
 
 def short_warn(message, category=UserWarning, stacklevel=1, source=None):
-    """Print a warning with the short format from ``formatwarning``."""
+    """Print a warning with the short format from `formatwarning`."""
     original_format = warnings.formatwarning
 
     warnings.formatwarning = formatwarning
