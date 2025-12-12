@@ -21,7 +21,8 @@ None.
 - `initial_state` was renamed to `state0` in `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
 ### Chores
-Rebrand NREL to NLR, and include name change for Alliance as well ([#27](https://github.com/NREL/thevenin/pull/27))
+- Allow single backticks for sphinx inline code (`default_role = 'literal'`) ([#28](https://github.com/NREL/thevenin/pull/28))
+- Rebrand NREL to NLR, and include name change for Alliance as well ([#27](https://github.com/NREL/thevenin/pull/27))
 
 ## [v0.2.0](https://github.com/NREL/thevenin/tree/v0.2.0)
 
