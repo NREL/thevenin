@@ -68,12 +68,11 @@ def run_spellcheck(session: nox.Session) -> None:
 
     """
 
-    command = ['codespell', '--config=.github/linters/.codespellrc']
+    run_codespell(session)
 
+    command = ['codespell', '--config=.github/linters/.codespellrc']
     if 'write' in session.posargs:
         command.insert(1, '-w')
-
-    run_codespell(session)
 
     session.run(*command, 'docs/source')
 
