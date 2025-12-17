@@ -62,6 +62,7 @@ def constant_steps():
     expr.add_step('current_A', -1., (3600., 1.), limits=('voltage_V', 4.3))
     expr.add_step('voltage_V', 4.3, (600., 1.))
     expr.add_step('power_W', 1., (600., 1.), limits=('voltage_V', 3.))
+    expr.add_step('current_A', 0., 600.)  # solver picks time steps
 
     return expr
 
@@ -297,6 +298,10 @@ def test_sim_w_multistep_experiment(sim_0RC, sim_1RC, sim_2RC, constant_steps):
     soln = sim_2RC.run(constant_steps)
     assert soln.success
     assert any(status == 2 for status in soln.status)
+
+    # solver-chosen time steps works
+    step = soln.get_steps(-1)
+    assert step.vars['time_s'].size > 2
 
 
 def test_sim_w_dynamic_current(sim_0RC, sim_1RC, sim_2RC, dynamic_current):

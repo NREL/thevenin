@@ -22,11 +22,11 @@ def test_initialization(expr):
 
 def test_tspan_construction(expr):
 
-    # using linspace
-    expr.add_step('current_A', 0., (10., 7))
+    # using float
+    expr.add_step('current_A', 0., 10.)
 
     step = expr._steps[-1]
-    npt.assert_allclose(step['tspan'], np.linspace(0., 10., 7))
+    npt.assert_allclose(step['tspan'], np.array([0., 10.], dtype=float))
 
     # using arange - evenly divisible
     expr.add_step('current_A', 0., (10., 2.))
@@ -62,18 +62,26 @@ def test_add_step(expr):
     with pytest.raises(TypeError):
         expr.add_step('current_A', 0., (3600., '1'))
 
+    # dt >= tmax in tspan
+    with pytest.raises(ValueError):
+        expr.add_step('current_A', 0., (100., 100.))
+
+    # wrong overall tyspan type
+    with pytest.raises(TypeError):
+        expr.add_step('current_A', 0., '3600.')
+
     # bad tspan arrays (doesn't start at zero, not 1D, non-monotonic, too short)
     with pytest.raises(ValueError):
-        expr.add_step('current_A', 0., [1., 2., 3.])
+        expr.add_step('current_A', 0., np.array([1., 2., 3.]))
 
     with pytest.raises(ValueError):
-        expr.add_step('current_A', 0., [[0., 2., 3.]])
+        expr.add_step('current_A', 0., np.array([[0., 2., 3.]]))
 
     with pytest.raises(ValueError):
-        expr.add_step('current_A', 0., [0., 2., 1.])
+        expr.add_step('current_A', 0., np.array([0., 2., 1.]))
 
     with pytest.raises(ValueError):
-        expr.add_step('current_A', 0., [0.])
+        expr.add_step('current_A', 0., np.array([0.]))
 
     # bad limits name
     with pytest.raises(ValueError):
@@ -87,12 +95,12 @@ def test_add_step(expr):
     with pytest.raises(TypeError):
         expr.add_step('current_A', 0., (3600., 1.), limits=('voltage_V', '3'))
 
-    # test current and linspace construction
-    expr.add_step('current_A', 1., (3600., 150))
+    # test current and float
+    expr.add_step('current_A', 1., 3600.)
     step = expr.steps[0]
 
     assert expr.num_steps == 1
-    npt.assert_allclose(step['tspan'], np.linspace(0., 3600., 150))
+    npt.assert_allclose(step['tspan'], np.array([0., 3600.], dtype=float))
 
     # test voltage and arange construction
     expr.add_step('voltage_V', 4., (3600., 1.))
