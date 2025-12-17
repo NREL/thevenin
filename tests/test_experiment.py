@@ -23,19 +23,19 @@ def test_initialization(expr):
 def test_tspan_construction(expr):
 
     # using float
-    expr.add_step('current_A', 0., 10.)
+    expr.add_step('current_A', 0, 10)
 
     step = expr._steps[-1]
     npt.assert_allclose(step['tspan'], np.array([0., 10.], dtype=float))
 
     # using arange - evenly divisible
-    expr.add_step('current_A', 0., (10., 2.))
+    expr.add_step('current_A', 0, (10, 2))
 
     step = expr._steps[-1]
     npt.assert_allclose(step['tspan'], np.array([0., 2., 4., 6., 8., 10.]))
 
     # using arange - not evenly divisible
-    expr.add_step('current_A', 0., (10., 3.))
+    expr.add_step('current_A', 0, (10, 3))
 
     step = expr._steps[-1]
     npt.assert_allclose(step['tspan'], np.array([0., 3., 6., 9., 10.]))

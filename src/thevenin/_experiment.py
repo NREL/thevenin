@@ -122,9 +122,9 @@ class Experiment:
             of times at which to save the solution by providing a 1D `np.array`;
             however, the first element must be zero and the array must be in a
             monotonically increasing order, and there must be at least three
-            elements. An array like `[0, tmax]` will will result in the solver
-            choosing its own time steps, similar to just providing a float. See
-            notes for more information.
+            elements. An array like `np.array([0, tmax])` will will result in
+            the solver choosing its own time steps, similar to just providing a
+            float. See notes for more information.
         limits : tuple[str, float], optional
             Stopping criteria for the new step, must be entered in sequential
             name/value pairs. Allowable names are {'soc', 'temperature_K',
@@ -197,7 +197,7 @@ class Experiment:
         if isinstance(tspan, Real):
             tspan = np.array([0., tspan], dtype=float)
 
-        elif isinstance(tspan, (list, tuple)):
+        elif isinstance(tspan, tuple):
 
             if not len(tspan) == 2:
                 raise ValueError("'tspan' tuple must be length 2.")
@@ -215,6 +215,8 @@ class Experiment:
 
         elif not isinstance(tspan, np.ndarray):
             raise TypeError("'tspan' must be type float, tuple, or np.array.")
+
+        tspan = np.asarray(tspan, dtype=float)
 
         if tspan.ndim != 1:
             raise ValueError("'tspan' must be one-dimensional.")

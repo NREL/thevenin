@@ -10,7 +10,7 @@
 - Allow `TransientState` as an input option to `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
 ### Optimizations
-None.
+- Change `tspan` constructor in experiments to allow floats, but not `(tmax, Nt)` ([#29](https://github.com/NREL/thevenin/pull/29))
 
 ### Bug Fixes
 - Update patching policy for releases, fix warnings in tests ([#25](https://github.com/NREL/thevenin/pull/25))
@@ -18,6 +18,7 @@ None.
 - Use `for` loops in `Solution` post-processing if arrays are incompatible ([#18](https://github.com/NREL/thevenin/pull/18))
 
 ### Breaking Changes
+- There is no longer a `linspace` option from `tspan: tuple[float, int]` construction ([#29](https://github.com/NREL/thevenin/pull/29))
 - `initial_state` was renamed to `state0` in `sim.pre()` ([#14](https://github.com/NREL/thevenin/pull/14))
 
 ### Chores
